@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from django.core import validators
 from django.core.exceptions import ValidationError
 from .models import User
 
@@ -33,3 +34,11 @@ class UserChangeForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ["phone_number", "password", "is_active", "is_admin", 'last_login']
+
+
+class OtpLoginForm(forms.Form):
+    phone = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), validators=[validators.MaxLengthValidator(11)])
+
+
+class CheckOtpForm(forms.Form):
+    code = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), validators=[validators.MaxLengthValidator(4)])

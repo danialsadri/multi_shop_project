@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import User
+from .models import User, Otp
 from .forms import UserCreationForm, UserChangeForm
 
 
@@ -19,8 +19,15 @@ class UserAdmin(BaseUserAdmin):
     fieldsets = [
         (None, {"fields": ["phone_number", "password"]}),
         ("Personal info", {"fields": ["email", "full_name"]}),
-        ('Permissions', {'fields': ('is_active', 'is_admin', 'is_superuser', 'last_login', 'groups', 'user_permissions')}),
+        ('Permissions',
+         {'fields': ('is_active', 'is_admin', 'is_superuser', 'last_login', 'groups', 'user_permissions')}),
     ]
     add_fieldsets = [
         (None, {"classes": ["wide"], "fields": ["phone_number", "password1", "password2"]}),
     ]
+
+
+class OtpAdmin(admin.ModelAdmin):
+    list_display = ['phone', 'code', 'expiration_date']
+    list_filter = ['expiration_date']
+    search_fields = ['phone']

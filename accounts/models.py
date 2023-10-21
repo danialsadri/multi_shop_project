@@ -21,3 +21,13 @@ class User(AbstractBaseUser, PermissionsMixin):
     @property
     def is_staff(self):
         return self.is_admin
+
+
+class Otp(models.Model):
+    token = models.CharField(max_length=100)
+    phone = models.CharField(max_length=11)
+    code = models.PositiveSmallIntegerField()
+    expiration_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.phone
