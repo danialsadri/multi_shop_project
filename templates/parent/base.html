@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    {% include 'partials/header_references.html' %}
+    {% block header_references %}{% endblock %}
+</head>
+<body>
+
+{% include 'partials/header.html' %}
+{% block content %}{% endblock %}
+{% include 'partials/footer.html' %}
+
+
+{% include 'partials/footer_references.html' %}
+{% block footer_references %}{% endblock %}
+</body>
+</html>
