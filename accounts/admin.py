@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import User, Otp
+from .models import User, Otp, Address
 from .forms import UserCreationForm, UserChangeForm
 
 
@@ -31,3 +31,11 @@ class OtpAdmin(admin.ModelAdmin):
     list_display = ['phone', 'code', 'expiration_date']
     list_filter = ['expiration_date']
     search_fields = ['phone']
+
+
+@admin.register(Address)
+class AddressAdmin(admin.ModelAdmin):
+    list_display = ['user', 'full_name', 'email', 'phone', 'postal_code']
+    list_filter = ['user']
+    search_fields = ['full_name', 'email', 'phone']
+    raw_id_fields = ['user']

@@ -6,7 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import View
-from .forms import OtpLoginForm, CheckOtpForm
+from .forms import OtpLoginForm, CheckOtpForm, AddressForm
 from .models import Otp, User
 import requests
 
@@ -64,3 +64,21 @@ class LogoutView(LoginRequiredMixin, View):
     def get(self, request):
         logout(request)
         return redirect('home:home')
+
+
+class AddressView(LoginRequiredMixin, View):
+    def get(self, request):
+        form = AddressForm()
+        return render(request, 'accounts/address.html', {'form': form})
+
+    def post(self, request):
+        form = AddressForm(request.POST)
+        if form.is_valid():
+            new_address = form.save(commit=False)
+            new_address.user = request.user
+            new_address.save()
+            next_page = request.GET.get('next')
+            if next_page:
+                return redirect(next_page)
+            return redirect('home:home')
+        return render(request, 'accounts/address.html', {'form': form})

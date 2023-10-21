@@ -1,0 +1,49 @@
+{% extends 'parent/base.html' %}
+
+{% block title %}address form{% endblock %}
+
+{% block content %}
+    <!-- Checkout Start -->
+    <div class="container-fluid">
+        <div class="mr-auto">
+            <div class="">
+                <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Billing Address</span>
+                </h5>
+                <div class="bg-light p-30 mb-5">
+                    <form action="" method="post" novalidate>
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                {{ form.full_name.label_tag }}
+                                {{ form.full_name }}
+                                {{ form.full_name.errors }}
+                            </div>
+                            <div class="col-md-6 form-group">
+                                {{ form.email.label_tag }}
+                                {{ form.email }}
+                                {{ form.email.errors }}
+                            </div>
+                            <div class="col-md-6 form-group">
+                                {{ form.phone.label_tag }}
+                                {{ form.phone }}
+                                {{ form.phone.errors }}
+                            </div>
+                            <div class="col-md-6 form-group">
+                                {{ form.postal_code.label_tag }}
+                                {{ form.postal_code }}
+                                {{ form.postal_code.errors }}
+                            </div>
+                            <div class="col-md-6 form-group">
+                                {{ form.address.label_tag }}
+                                {{ form.address }}
+                                {{ form.address.errors }}
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-primary py-2 px-4" value="Send">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Checkout End -->
+{% endblock %}

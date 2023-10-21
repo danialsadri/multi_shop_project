@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core import validators
 from django.core.exceptions import ValidationError
-from .models import User
+from .models import User, Address
 
 
 class UserCreationForm(forms.ModelForm):
@@ -29,7 +29,8 @@ class UserCreationForm(forms.ModelForm):
 
 
 class UserChangeForm(forms.ModelForm):
-    password = ReadOnlyPasswordHashField(help_text="you can change password using <a href=\"../password/\">this form</a>.")
+    password = ReadOnlyPasswordHashField(
+        help_text="you can change password using <a href=\"../password/\">this form</a>.")
 
     class Meta:
         model = User
@@ -37,8 +38,23 @@ class UserChangeForm(forms.ModelForm):
 
 
 class OtpLoginForm(forms.Form):
-    phone = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), validators=[validators.MaxLengthValidator(11)])
+    phone = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}),
+                            validators=[validators.MaxLengthValidator(11)])
 
 
 class CheckOtpForm(forms.Form):
-    code = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}), validators=[validators.MaxLengthValidator(4)])
+    code = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}),
+                           validators=[validators.MaxLengthValidator(4)])
+
+
+class AddressForm(forms.ModelForm):
+    class Meta:
+        model = Address
+        exclude = ['user']
+        widgets = {
+            'full_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control'}),
+            'address': forms.Textarea(attrs={'class': 'form-control'}),
+            'postal_code': forms.TextInput(attrs={'class': 'form-control'}),
+        }
