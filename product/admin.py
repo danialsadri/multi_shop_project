@@ -11,8 +11,8 @@ class InformationInline(admin.StackedInline):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ['title', 'price', 'discount', 'get_image']
-    list_filter = ['price', 'discount']
+    list_display = ['title', 'price', 'discount', 'get_image', 'created']
+    list_filter = ['created']
     search_fields = ['title', 'description']
     inlines = [InformationInline]
 

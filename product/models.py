@@ -1,5 +1,7 @@
 from django.db import models
 from datetime import datetime
+
+from django.utils import timezone
 from django.utils.html import format_html
 
 
@@ -43,6 +45,7 @@ class Product(models.Model):
     discount = models.PositiveSmallIntegerField()
     size = models.ManyToManyField(Size, related_name='products')
     color = models.ManyToManyField(Color, related_name='products')
+    created = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.title
