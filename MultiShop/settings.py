@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',
     'home.apps.HomeConfig',
     'accounts.apps.AccountsConfig',
     'product.apps.ProductConfig',

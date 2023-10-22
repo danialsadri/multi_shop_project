@@ -1,0 +1,37 @@
+{% extends 'parent/base.html' %}
+
+{% block title %}search{% endblock %}
+
+
+{% block content %}
+    <!-- Shop Start -->
+    <div class="container-fluid">
+        <div class="row px-xl-5">
+            <!-- Shop Product Start -->
+            <div class="col-lg-12">
+                <div class="row pb-3">
+                    {% for product in results %}
+                        <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+                            <div class="product-item bg-light mb-4">
+                                <div class="product-img position-relative overflow-hidden">
+                                    <img class="img-fluid w-100" src="{{ product.image.url }}" alt="">
+                                    <div class="product-action">
+                                        <a class="btn btn-outline-dark btn-square" href="{{ product.get_absolute_url }}"><i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="text-center py-4">
+                                    <a class="h6 text-decoration-none text-truncate" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                                    <div class="d-flex align-items-center justify-content-center mt-2">
+                                        <h5>${{ product.price }}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- Shop Product End -->
+        </div>
+    </div>
+    <!-- Shop End -->
+{% endblock %}
