@@ -29,7 +29,7 @@ class OtpLoginView(View):
             cd = form.cleaned_data
             random_code = randint(1000, 9999)
             print(random_code)
-            # SMS.verification({'receptor': cd['phone'], 'type': '1', 'template': 'multishop', 'param1': random_code})
+            # SMS.verification({'receptor': cd['phone'], 'type': '1', 'templates': 'multishop', 'param1': random_code})
             token = str(uuid4())
             Otp.objects.create(phone=cd['phone'], code=random_code, token=token)
             return redirect(reverse('accounts:check_otp') + f"?token={token}")

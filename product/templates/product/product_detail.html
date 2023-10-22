@@ -21,16 +21,15 @@
                     <h3>{{ product.title }}</h3>
                     <h3 class="font-weight-semi-bold mb-4">${{ product.price }}</h3>
                     <p class="mb-4">{{ product.description }}</p>
-                    <form>
+                    <form action="{% url 'cart:add' product.id %}" method="post">
+                        {% csrf_token %}
                         <div class="d-flex mb-3">
                             {% if product.size.all %}
                                 <strong class="text-dark mr-3">Sizes:</strong>
                                 {% for size in product.size.all %}
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="{{ size.title }}"
-                                               value="{{ size.title }}" name="size">
-                                        <label class="custom-control-label"
-                                               for="{{ size.title }}">{{ size.title }}</label>
+                                        <input type="radio" class="custom-control-input" id="{{ size.title }}" value="{{ size.title }}" name="size">
+                                        <label class="custom-control-label" for="{{ size.title }}">{{ size.title }}</label>
                                     </div>
                                 {% endfor %}
                             {% endif %}
@@ -40,10 +39,8 @@
                                 <strong class="text-dark mr-3">Colors:</strong>
                                 {% for color in product.color.all %}
                                     <div class="custom-control custom-radio custom-control-inline">
-                                        <input type="radio" class="custom-control-input" id="{{ color.title }}"
-                                               value="{{ color.title }}" name="color">
-                                        <label class="custom-control-label"
-                                               for="{{ color.title }}">{{ color.title }}</label>
+                                        <input type="radio" class="custom-control-input" id="{{ color.title }}" value="{{ color.title }}" name="color">
+                                        <label class="custom-control-label" for="{{ color.title }}">{{ color.title }}</label>
                                     </div>
                                 {% endfor %}
                             {% endif %}
@@ -51,18 +48,14 @@
                         <div class="d-flex align-items-center mb-4 pt-2">
                             <div class="input-group quantity mr-3" style="width: 130px;">
                                 <div class="input-group-btn">
-                                    <button type="button" class="btn btn-primary btn-minus"><i class="fa fa-minus"></i>
-                                    </button>
+                                    <button type="button" class="btn btn-primary btn-minus"><i class="fa fa-minus"></i></button>
                                 </div>
-                                <input type="text" class="form-control bg-secondary border-0 text-center" value="1"
-                                       name="quantity">
+                                <input type="text" class="form-control bg-secondary border-0 text-center" value="1" name="quantity">
                                 <div class="input-group-btn">
-                                    <button type="button" class="btn btn-primary btn-plus"><i class="fa fa-plus"></i>
-                                    </button>
+                                    <button type="button" class="btn btn-primary btn-plus"><i class="fa fa-plus"></i></button>
                                 </div>
                             </div>
-                            <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart
-                            </button>
+                            <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i>Add To Cart</button>
                         </div>
                     </form>
                 </div>
