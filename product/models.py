@@ -1,6 +1,7 @@
-from django.db import models
 from datetime import datetime
 
+from django.db import models
+from django.urls import reverse
 from django.utils import timezone
 from django.utils.html import format_html
 
@@ -52,6 +53,9 @@ class Product(models.Model):
 
     def get_image(self):
         return format_html(f"<img src='{self.image.url}' alt='{self.title}' width='70px' height='50px'>")
+
+    def get_absolute_url(self):
+        return reverse(viewname='product:detail', kwargs={'product_id': self.id})
 
 
 class Information(models.Model):
