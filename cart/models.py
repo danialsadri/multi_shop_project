@@ -23,3 +23,12 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return self.order.user.phone_number
+
+
+class DiscountCode(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    discount = models.PositiveSmallIntegerField(default=0)
+    quantity = models.PositiveSmallIntegerField(default=1)
+
+    def __str__(self):
+        return self.name

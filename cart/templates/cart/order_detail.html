@@ -34,10 +34,10 @@
                 </table>
             </div>
             <div class="col-lg-4">
-                <form class="mb-30" action="#" method="post">
+                <form class="mb-30" action="{% url 'cart:apply_discount' order.id %}" method="post">
                     {% csrf_token %}
                     <div class="input-group">
-                        <input type="text" name="discount_code" class="form-control border-0 p-4" placeholder="Discount Code">
+                        <input type="text" name="code" class="form-control border-0 p-4" placeholder="Discount Code">
                         <div class="input-group-append"><button class="btn btn-primary">Apply Coupon</button></div>
                     </div>
                 </form>
