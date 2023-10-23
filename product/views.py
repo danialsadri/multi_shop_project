@@ -7,7 +7,19 @@ from product.models import Product
 
 class ProductListView(View):
     def get(self, request):
+        # filter by size color min price max price
+        colors = request.GET.getlist('color')
+        sizes = request.GET.getlist('size')
+        min_price = request.GET.get('min_price')
+        max_price = request.GET.get('max_price')
         products = Product.objects.all()
+        if colors:
+            products = products.filter(color__title__in=colors).distinct()
+        if sizes:
+            products = products.filter(size__title__in=sizes).distinct()
+        if min_price and max_price:
+            products = products.filter(price__gte=min_price, price__lte=max_price)
+        # pagination
         paginator = Paginator(products, 3)
         page_number = request.GET.get('page', 1)
         try:
