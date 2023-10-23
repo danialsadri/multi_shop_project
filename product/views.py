@@ -6,7 +6,7 @@ from product.models import Product, Category
 
 
 class ProductListView(View):
-    def get(self, request):
+    def get(self, request, category=None):
         # filter by size color min price max price
         colors = request.GET.getlist('color')
         sizes = request.GET.getlist('size')
@@ -19,6 +19,11 @@ class ProductListView(View):
             products = products.filter(size__title__in=sizes).distinct()
         if min_price and max_price:
             products = products.filter(price__gte=min_price, price__lte=max_price)
+        # category
+        if category is not None:
+            products = Product.objects.filter(category__title=category)
+        else:
+            products = Product.objects.all()
         # pagination
         paginator = Paginator(products, 3)
         page_number = request.GET.get('page', 1)
