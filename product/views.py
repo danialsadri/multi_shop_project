@@ -2,7 +2,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, get_object_or_404
 from django.views import View
 
-from product.models import Product
+from product.models import Product, Category
 
 
 class ProductListView(View):
@@ -35,3 +35,9 @@ class ProductDetailView(View):
     def get(self, request, product_id):
         product = get_object_or_404(Product, id=product_id)
         return render(request, 'product/product_detail.html', {'product': product})
+
+
+class HeaderPartialView(View):
+    def get(self, request):
+        categories = Category.objects.all()
+        return render(request, 'partials/header.html', {'categories': categories})

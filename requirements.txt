@@ -2,6 +2,7 @@ asgiref==3.7.2
 certifi==2023.7.22
 charset-normalizer==3.3.0
 Django==4.2.6
+django-render-partial==0.4
 ghasedakpack==0.1.13
 idna==3.4
 Pillow==10.1.0

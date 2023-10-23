@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load render_partial %}
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -9,7 +10,7 @@
 </head>
 <body>
 
-{% include 'partials/header.html' %}
+{% render_partial 'product:header' %}
 {% block content %}{% endblock %}
 {% include 'partials/footer.html' %}
 
