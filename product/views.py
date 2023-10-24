@@ -54,7 +54,6 @@ class HeaderPartialView(View):
 
 
 class CommentView(View):
-    @method_decorator(require_POST)
     def post(self, request, product_id):
         product = get_object_or_404(Product, id=product_id)
         comment = None
@@ -63,5 +62,5 @@ class CommentView(View):
             comment = form.save(commit=False)
             comment.product = product
             comment.save()
-        context = {'product': product, 'comment.html': comment, 'form': form}
+        context = {'product': product, 'comment': comment, 'form': form}
         return render(request, 'product/comment.html', context)

@@ -1,5 +1,5 @@
 {% extends 'parent/base.html' %}
-{% load static %}
+
 
 {% block title %}post comment{% endblock %}
 
@@ -8,7 +8,7 @@
         <div class="centered mb-4 text-center">
             <h2 class="h1 m-0">Your comment has been registered</h2>
             <br>
-            <a href="{{ product.get_absolute_url }}" class="btn btn-dark mb-0">return to post</a>
+            <a href="{{ product.get_absolute_url }}" class="btn btn-dark mb-0">return to product</a>
         </div>
     {% else %}
         <form action="" method="post">

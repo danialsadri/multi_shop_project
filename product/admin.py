@@ -37,8 +37,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['product', 'name', 'active', 'created']
+    list_display = ['product', 'name', 'active']
     list_filter = ['created', 'active']
     search_fields = ['name', 'description']
     raw_id_fields = ['product']
     ordering = ['created']
+    list_editable = ['active']
