@@ -1,8 +1,10 @@
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, get_object_or_404
+from django.utils.decorators import method_decorator
 from django.views import View
-
-from product.models import Product, Category
+from django.views.decorators.http import require_POST
+from .forms import CommentForm
+from .models import Product, Category
 
 
 class ProductListView(View):
@@ -39,10 +41,27 @@ class ProductListView(View):
 class ProductDetailView(View):
     def get(self, request, product_id):
         product = get_object_or_404(Product, id=product_id)
-        return render(request, 'product/product_detail.html', {'product': product})
+        comments = product.comments.filter(active=True)
+        form = CommentForm()
+        context = {'product': product, 'comments': comments, 'form': form}
+        return render(request, 'product/product_detail.html', context)
 
 
 class HeaderPartialView(View):
     def get(self, request):
         categories = Category.objects.all()
         return render(request, 'partials/header.html', {'categories': categories})
+
+
+class CommentView(View):
+    @method_decorator(require_POST)
+    def post(self, request, product_id):
+        product = get_object_or_404(Product, id=product_id)
+        comment = None
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.product = product
+            comment.save()
+        context = {'product': product, 'comment.html': comment, 'form': form}
+        return render(request, 'product/comment.html', context)

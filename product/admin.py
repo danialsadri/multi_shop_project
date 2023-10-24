@@ -33,3 +33,12 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ['title']
     raw_id_fields = ['parent']
     prepopulated_fields = {'slug': ['title']}
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['product', 'name', 'active', 'created']
+    list_filter = ['created', 'active']
+    search_fields = ['name', 'description']
+    raw_id_fields = ['product']
+    ordering = ['created']
