@@ -123,4 +123,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'accounts.User'
 
 # SMS
-SMS = ghasedakpack.Ghasedak("246e7e90df21bb4a5bcba2122aaeae50cf68b3f31e4832b6112b99f15e32a135")
+SMS = ghasedakpack.Ghasedak("***")
+
+# Payment Gateway
+MERCHANT = "00000000-0000-0000-0000-000000000000"
+SANDBOX = True
+description = "توضیحات مربوط به تراکنش را در این قسمت وارد کنید"
+CallbackURL = 'http://127.0.0.1:8080/cart/verify/'
+
+# ? Sandbox Merchant
+if SANDBOX:
+    sandbox = 'sandbox'
+else:
+    sandbox = 'www'
+
+ZP_API_REQUEST = f"https://{sandbox}.zarinpal.com/pg/rest/WebGate/PaymentRequest.json"
+ZP_API_VERIFY = f"https://{sandbox}.zarinpal.com/pg/rest/WebGate/PaymentVerification.json"
+ZP_API_STARTPAY = f"https://{sandbox}.zarinpal.com/pg/StartPay/"

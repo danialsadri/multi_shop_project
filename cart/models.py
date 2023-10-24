@@ -6,6 +6,7 @@ from product.models import Product
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders')
     total_price = models.PositiveBigIntegerField(default=0)
+    address = models.TextField(max_length=500, blank=True, null=True)
     is_paid = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
 
