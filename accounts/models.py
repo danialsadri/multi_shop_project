@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
+from django.utils import timezone
+
 from accounts.managers import UserManager
 
 
@@ -43,3 +45,21 @@ class Address(models.Model):
 
     def __str__(self):
         return self.user.phone_number
+
+
+class ContactUs(models.Model):
+    name = models.CharField(max_length=100, verbose_name='your name')
+    email = models.EmailField(max_length=100, verbose_name='your email')
+    phone = models.CharField(max_length=11, verbose_name='your phone')
+    subject = models.CharField(max_length=100)
+    message = models.TextField(max_length=500)
+    created = models.DateTimeField(default=timezone.now())
+
+    class Meta:
+        ordering = ['-created']
+        indexes = [models.Index(fields=['-created'])]
+        verbose_name = 'contact us'
+        verbose_name_plural = 'contact us'
+
+    def __str__(self):
+        return self.name

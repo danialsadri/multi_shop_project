@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core import validators
 from django.core.exceptions import ValidationError
-from .models import User, Address
+from .models import User, Address, ContactUs
 
 
 class UserCreationForm(forms.ModelForm):
@@ -57,4 +57,17 @@ class AddressForm(forms.ModelForm):
             'phone': forms.TextInput(attrs={'class': 'form-control'}),
             'address': forms.Textarea(attrs={'class': 'form-control'}),
             'postal_code': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+
+class ContactUsForm(forms.ModelForm):
+    class Meta:
+        model = ContactUs
+        fields = "__all__"
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(100)]}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(100)]}),
+            'phone': forms.TextInput(attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(11)]}),
+            'subject': forms.TextInput(attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(100)]}),
+            'message': forms.Textarea(attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(500)]}),
         }

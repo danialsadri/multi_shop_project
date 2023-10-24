@@ -7,4 +7,5 @@ urlpatterns = [
     path('check_otp/', views.CheckOtpView.as_view(), name='check_otp'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
     path('address/', views.AddressView.as_view(), name='address'),
+    path('contact/us/', views.ContactUsView.as_view(), name='contact_us'),
 ]

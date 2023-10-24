@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import View
-from .forms import OtpLoginForm, CheckOtpForm, AddressForm
+from .forms import OtpLoginForm, CheckOtpForm, AddressForm, ContactUsForm
 from .models import Otp, User
 from django.conf import settings
 
@@ -79,3 +79,19 @@ class AddressView(LoginRequiredMixin, View):
                 return redirect(next_page)
             return redirect('home:home')
         return render(request, 'accounts/address.html', {'form': form})
+
+
+class ContactUsView(View):
+    form_class = ContactUsForm
+    template_name = 'accounts/contactus.html'
+
+    def get(self, request):
+        form = self.form_class()
+        return render(request=request, template_name=self.template_name, context={'form': form})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home:home')
+        return render(request=request, template_name=self.template_name, context={'form': form})

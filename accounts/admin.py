@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from .models import User, Otp, Address
+from .models import User, Otp, Address, ContactUs
 from .forms import UserCreationForm, UserChangeForm
 
 
@@ -39,3 +39,10 @@ class AddressAdmin(admin.ModelAdmin):
     list_filter = ['user']
     search_fields = ['full_name', 'email', 'phone']
     raw_id_fields = ['user']
+
+
+@admin.register(ContactUs)
+class ContactUsAdmin(admin.ModelAdmin):
+    list_display = ['name', 'email', 'phone', 'subject']
+    list_filter = ['subject']
+    search_fields = ['name', 'subject']
