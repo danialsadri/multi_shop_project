@@ -1,4 +1,5 @@
 from pathlib import Path
+import ghasedakpack
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -120,3 +121,6 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.User'
+
+# SMS
+SMS = ghasedakpack.Ghasedak("246e7e90df21bb4a5bcba2122aaeae50cf68b3f31e4832b6112b99f15e32a135")

@@ -1,6 +1,5 @@
 from random import randint
 from uuid import uuid4
-import ghasedakpack
 from django.contrib.auth import login, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
@@ -8,9 +7,7 @@ from django.urls import reverse
 from django.views import View
 from .forms import OtpLoginForm, CheckOtpForm, AddressForm
 from .models import Otp, User
-import requests
-
-SMS = ghasedakpack.Ghasedak("246e7e90df21bb4a5bcba2122aaeae50cf68b3f31e4832b6112b99f15e32a135")
+from django.conf import settings
 
 
 class OtpLoginView(View):
@@ -29,7 +26,7 @@ class OtpLoginView(View):
             cd = form.cleaned_data
             random_code = randint(1000, 9999)
             print(random_code)
-            # SMS.verification({'receptor': cd['phone'], 'type': '1', 'templates': 'multishop', 'param1': random_code})
+            # settings.SMS.verification({'receptor': cd['phone'], 'type': '1', 'templates': 'multishop', 'param1': random_code})
             token = str(uuid4())
             Otp.objects.create(phone=cd['phone'], code=random_code, token=token)
             return redirect(reverse('accounts:check_otp') + f"?token={token}")
