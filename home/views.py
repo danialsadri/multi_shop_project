@@ -8,7 +8,7 @@ from .forms import SearchForm
 
 class HomeView(View):
     def get(self, request):
-        product = Product.objects.first()
+        product = Product.objects.last()
         categories = Category.objects.all()
         return render(request, 'home/home.html', {'product': product, 'categories': categories})
 
