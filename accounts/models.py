@@ -53,7 +53,7 @@ class ContactUs(models.Model):
     phone = models.CharField(max_length=11, verbose_name='your phone')
     subject = models.CharField(max_length=100)
     message = models.TextField(max_length=500)
-    created = models.DateTimeField(default=timezone.now())
+    created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['-created']

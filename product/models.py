@@ -37,7 +37,7 @@ def get_image_product(instance, filename):
 
 
 class Product(models.Model):
-    category = models.ManyToManyField(Category, related_name='products', blank=True, null=True)
+    category = models.ManyToManyField(Category, related_name='products', blank=True)
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=500)
     image = models.ImageField(upload_to=get_image_product)
