@@ -2,13 +2,15 @@ from django.contrib.postgres.search import TrigramSimilarity
 from django.shortcuts import render
 from django.views import View
 
-from product.models import Product
+from product.models import Product, Category
 from .forms import SearchForm
 
 
 class HomeView(View):
     def get(self, request):
-        return render(request, 'home/home.html')
+        product = Product.objects.first()
+        categories = Category.objects.all()
+        return render(request, 'home/home.html', {'product': product, 'categories': categories})
 
 
 class SearchView(View):

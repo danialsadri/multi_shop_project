@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'product.apps.ProductConfig',
     'cart.apps.CartConfig',
+    'utils.apps.UtilsConfig',
     'django_render_partial',
 ]
 
