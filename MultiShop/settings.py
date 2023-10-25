@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 import ghasedakpack
 
@@ -11,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k)o8xg0kijb@i@ny!kqxh+8sdrg_8k*ws&voe1y@09vi+g&i@t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = []
 
@@ -68,11 +69,12 @@ WSGI_APPLICATION = 'MultiShop.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'MultiShopAdmin',
-        'USER': 'MultiShop',
-        'PASSWORD': 'MultiShop',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DATABASE-NAME', 'postgres'),
+        'USER': os.environ.get('DATABASE-USER', 'postgres'),
+        'PASSWORD': os.environ.get('DATABASE-PASSWORD', 'postgres'),
+        'HOST': os.environ.get('DATABASE-HOST', 'database'),
+        'PORT': os.environ.get('DATABASE-PORT', 5432),
     }
 }
 
@@ -111,9 +113,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
+STATICFILES_DIRS = [BASE_DIR / 'staticfiles']
+STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
