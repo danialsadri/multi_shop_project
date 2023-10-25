@@ -91,7 +91,9 @@
                                 {% endif %}
                             </div>
                         </div>
-                        <a href="/admin" class="nav-item nav-link">Admin</a>
+                        {% if request.user.is_admin %}
+                        	<a href="/admin" class="nav-item nav-link">Admin</a>
+                        {% endif %}
                     </div>
                     <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                         <a href="" class="btn px-0">
