@@ -1,6 +1,6 @@
 {% extends 'parent/base.html' %}
 {% load static %}
-{% load product_tags %}
+{% load tag %}
 {% block title %}MultiShop{% endblock %}
 
 {% block content %}
@@ -90,9 +90,37 @@
 
     <!-- Products Start -->
     <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Recent Products</span></h2>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Recent Products</span>
+        </h2>
         <div class="row px-xl-5">
             {% resent_products 8 %}
+        </div>
+    </div>
+    <!-- Products End -->
+
+    <!-- Products Start -->
+    <div class="container-fluid pt-5 pb-3">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Popular products</span></h2>
+        <div class="row px-xl-5">
+            {% popular_products 8 as products %}
+            {% for product in products %}
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="product-item bg-light mb-4">
+                        <div class="product-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="{{ product.image.url }}" alt="{{ product.title }}">
+                            <div class="product-action">
+                                <a class="btn btn-outline-dark btn-square" href="{{ product.get_absolute_url }}"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <a class="h6 text-decoration-none text-truncate" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                            <div class="d-flex align-items-center justify-content-center mt-2">
+                                <h5>${{ product.price }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
     <!-- Products End -->
@@ -103,28 +131,28 @@
             <div class="col">
                 <div class="owl-carousel vendor-carousel">
                     <div class="bg-light p-4">
-                        <img src="img/vendor-1.jpg" alt="">
+                        <img src="{% static 'img/vendor-1.jpg' %}" alt="">
                     </div>
                     <div class="bg-light p-4">
-                        <img src="img/vendor-2.jpg" alt="">
+                        <img src="{% static 'img/vendor-2.jpg' %}" alt="">
                     </div>
                     <div class="bg-light p-4">
-                        <img src="img/vendor-3.jpg" alt="">
+                        <img src="{% static 'img/vendor-3.jpg' %}" alt="">
                     </div>
                     <div class="bg-light p-4">
-                        <img src="img/vendor-4.jpg" alt="">
+                        <img src="{% static 'img/vendor-4.jpg' %}" alt="">
                     </div>
                     <div class="bg-light p-4">
-                        <img src="img/vendor-5.jpg" alt="">
+                        <img src="{% static 'img/vendor-5.jpg' %}" alt="">
                     </div>
                     <div class="bg-light p-4">
-                        <img src="img/vendor-6.jpg" alt="">
+                        <img src="{% static 'img/vendor-6.jpg' %}" alt="">
                     </div>
                     <div class="bg-light p-4">
-                        <img src="img/vendor-7.jpg" alt="">
+                        <img src="{% static 'img/vendor-7.jpg' %}" alt="">
                     </div>
                     <div class="bg-light p-4">
-                        <img src="img/vendor-8.jpg" alt="">
+                        <img src="{% static 'img/vendor-8.jpg' %}" alt="">
                     </div>
                 </div>
             </div>
