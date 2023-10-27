@@ -1,14 +1,14 @@
 {% extends 'parent/base.html' %}
-
+{% load i18n %}
 
 {% block title %}post comment{% endblock %}
 
 {% block content %}
     {% if comment %}
         <div class="centered mb-4 text-center">
-            <h2 class="h1 m-0">Your comment has been registered</h2>
+            <h2 class="h1 m-0">{% trans 'Your comment has been registered' %}</h2>
             <br>
-            <a href="{{ product.get_absolute_url }}" class="btn btn-dark mb-0">return to product</a>
+            <a href="{{ product.get_absolute_url }}" class="btn btn-dark mb-0">{% trans 'return to product' %}</a>
         </div>
     {% else %}
         <form action="" method="post">
@@ -24,7 +24,7 @@
                 {{ form.description.errors }}
             </div>
             <div class="form-group mb-0">
-                <input type="submit" value="Leave Your Review" class="btn btn-primary px-3">
+                <input type="submit" value="{% trans 'Leave Your Review' %}" class="btn btn-primary px-3">
             </div>
         </form>
     {% endif %}

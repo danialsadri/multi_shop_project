@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 10:14+0330\n"
+"POT-Creation-Date: 2023-10-27 10:19+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -142,6 +142,19 @@ msgstr "محصولات اخیر"
 msgid "Popular products"
 msgstr "محصولات محبوب"
 
+#: .\product\templates\product\comment.html:9
+msgid "Your comment has been registered"
+msgstr "نظر شما ثبت شد"
+
+#: .\product\templates\product\comment.html:11
+msgid "return to product"
+msgstr "بازگشت به محصول"
+
+#: .\product\templates\product\comment.html:27
+#: .\product\templates\product\product_detail.html:128
+msgid "Leave Your Review"
+msgstr "نظر خود را بگذارید"
+
 #: .\product\templates\product\product_detail.html:28
 msgid "Sizes"
 msgstr "سایز ها"
@@ -181,10 +194,6 @@ msgstr "بررسی برای"
 #: .\product\templates\product\product_detail.html:114
 msgid "Leave a review"
 msgstr "نظر بدهید"
-
-#: .\product\templates\product\product_detail.html:128
-msgid "Leave Your Review"
-msgstr "نظر خود را بگذارید"
 
 #: .\product\templates\product\product_list.html:14
 msgid "Filter by price"
