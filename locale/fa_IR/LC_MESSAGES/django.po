@@ -115,7 +115,7 @@ msgstr "زمان ایجاد"
 
 #: .\accounts\models.py:72 .\accounts\models.py:73
 msgid "contact us"
-msgstr "با ما تماس بگیرید"
+msgstr "تماس با ما"
 
 #: .\accounts\templates\accounts\address.html:11
 msgid "Billing Address"
