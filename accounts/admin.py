@@ -4,6 +4,10 @@ from .models import User, Otp, Address, ContactUs
 from .forms import UserCreationForm, UserChangeForm
 from django.utils.translation import gettext_lazy as _
 
+admin.sites.AdminSite.site_title = _('control panel')
+admin.sites.AdminSite.site_header = _('control panel')
+admin.sites.AdminSite.index_title = _('control panel')
+
 
 @admin.register(User)
 class UserAdmin(BaseUserAdmin):
