@@ -1,5 +1,5 @@
 {% extends 'parent/base.html' %}
-
+{% load i18n %}
 {% block title %}product list{% endblock %}
 
 
@@ -11,50 +11,50 @@
             <div class="col-lg-3 col-md-4">
                 <form action="" method="get">
                     <!-- Price Start -->
-                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by price</span></h5>
+                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">{% trans 'Filter by price' %}</span></h5>
                     <div class="bg-light p-4 mb-30">
                             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                                <label for="min">Min</label>
+                                <label for="min">{% trans 'Min' %}</label>
                                 <input type="number" name="min_price" id="min">
                             </div>
                             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                                <label for="max">Max</label>
+                                <label for="max">{% trans 'Max' %}</label>
                                 <input type="number" name="max_price" id="max">
                             </div>
                     </div>
                     <!-- Price End -->
                     <!-- Color Start -->
-                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by color</span></h5>
+                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">{% trans 'Filter by color' %}</span></h5>
                     <div class="bg-light p-4 mb-30">
                             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                                 <input type="checkbox" name="color" value="black" class="custom-control-input"
                                        id="color-1">
-                                <label class="custom-control-label" for="color-1">Black</label>
+                                <label class="custom-control-label" for="color-1">{% trans 'Black' %}</label>
                             </div>
                             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                                 <input type="checkbox" name="color" value="white" class="custom-control-input"
                                        id="color-2">
-                                <label class="custom-control-label" for="color-2">White</label>
+                                <label class="custom-control-label" for="color-2">{% trans 'White' %}</label>
                             </div>
                             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                                 <input type="checkbox" name="color" value="red" class="custom-control-input"
                                        id="color-3">
-                                <label class="custom-control-label" for="color-3">Red</label>
+                                <label class="custom-control-label" for="color-3">{% trans 'Red' %}</label>
                             </div>
                             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                                 <input type="checkbox" name="color" value="blue" class="custom-control-input"
                                        id="color-4">
-                                <label class="custom-control-label" for="color-4">Blue</label>
+                                <label class="custom-control-label" for="color-4">{% trans 'Blue' %}</label>
                             </div>
                             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
                                 <input type="checkbox" name="color" value="green" class="custom-control-input"
                                        id="color-5">
-                                <label class="custom-control-label" for="color-5">Green</label>
+                                <label class="custom-control-label" for="color-5">{% trans 'Green' %}</label>
                             </div>
                     </div>
                     <!-- Color End -->
                     <!-- Size Start -->
-                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by size</span></h5>
+                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">{% trans 'Filter by size' %}</span></h5>
                     <div class="bg-light p-4 mb-30">
                             <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
                                 <input type="checkbox" name="size" value="l" class="custom-control-input" id="size-1">
@@ -79,7 +79,7 @@
                             </div>
                     </div>
                     <!-- Size End -->
-                    <input type="submit" class="btn btn-info rounded" value="submit">
+                    <input type="submit" class="btn btn-info rounded" value="{% trans 'send' %}">
                 </form>
             </div>
             <!-- Shop Sidebar End -->

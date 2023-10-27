@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 09:55+0330\n"
+"POT-Creation-Date: 2023-10-27 10:05+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,7 @@ msgstr "آدرس قبض"
 #: .\accounts\templates\accounts\check_otp.html:25
 #: .\accounts\templates\accounts\contactus.html:48
 #: .\accounts\templates\accounts\otp_login.html:25
+#: .\product\templates\product\product_list.html:82
 msgid "send"
 msgstr "ارسال"
 
@@ -140,3 +141,43 @@ msgstr "محصولات اخیر"
 #: .\home\templates\home\home.html:104
 msgid "Popular products"
 msgstr "محصولات محبوب"
+
+#: .\product\templates\product\product_list.html:14
+msgid "Filter by price"
+msgstr "فیلتر بر اساس قیمت"
+
+#: .\product\templates\product\product_list.html:17
+msgid "Min"
+msgstr "حداقل"
+
+#: .\product\templates\product\product_list.html:21
+msgid "Max"
+msgstr "حداکثر"
+
+#: .\product\templates\product\product_list.html:27
+msgid "Filter by color"
+msgstr "فیلتر بر اساس رنگ"
+
+#: .\product\templates\product\product_list.html:32
+msgid "Black"
+msgstr "مشکی"
+
+#: .\product\templates\product\product_list.html:37
+msgid "White"
+msgstr "سفید"
+
+#: .\product\templates\product\product_list.html:42
+msgid "Red"
+msgstr "قرمز"
+
+#: .\product\templates\product\product_list.html:47
+msgid "Blue"
+msgstr "آبی"
+
+#: .\product\templates\product\product_list.html:52
+msgid "Green"
+msgstr "سبز"
+
+#: .\product\templates\product\product_list.html:57
+msgid "Filter by size"
+msgstr "فیلتر بر اساس سایز"
