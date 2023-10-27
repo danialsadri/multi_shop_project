@@ -1,6 +1,6 @@
 {% extends 'parent/base.html' %}
 {% load static %}
-
+{% load i18n %}
 {% block title %}product detail{% endblock %}
 
 {% block content %}
@@ -25,7 +25,7 @@
                         {% csrf_token %}
                         <div class="d-flex mb-3">
                             {% if product.size.all %}
-                                <strong class="text-dark mr-3">Sizes:</strong>
+                                <strong class="text-dark mr-3">{% trans 'Sizes' %}:</strong>
                                 {% for size in product.size.all %}
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="{{ size.title }}"
@@ -38,7 +38,7 @@
                         </div>
                         <div class="d-flex mb-4">
                             {% if product.color.all %}
-                                <strong class="text-dark mr-3">Colors:</strong>
+                                <strong class="text-dark mr-3">{% trans 'Colors' %}:</strong>
                                 {% for color in product.color.all %}
                                     <div class="custom-control custom-radio custom-control-inline">
                                         <input type="radio" class="custom-control-input" id="{{ color.title }}"
@@ -62,7 +62,7 @@
                                     </button>
                                 </div>
                             </div>
-                            <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i>Add To Cart
+                            <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i>{% trans 'Add To Cart' %}
                             </button>
                         </div>
                     </form>
@@ -74,17 +74,17 @@
                 <div class="bg-light p-30">
                     <div class="nav nav-tabs mb-4">
                         <a class="nav-item nav-link text-dark active" data-toggle="tab"
-                           href="#tab-pane-1">Description</a>
-                        <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-2">Information</a>
-                        <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-3">Reviews</a>
+                           href="#tab-pane-1">{% trans 'Description' %}</a>
+                        <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-2">{% trans 'Information' %}</a>
+                        <a class="nav-item nav-link text-dark" data-toggle="tab" href="#tab-pane-3">{% trans 'Reviews' %}</a>
                     </div>
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="tab-pane-1">
-                            <h4 class="mb-3">Product Description</h4>
+                            <h4 class="mb-3">{% trans 'Product Description' %}</h4>
                             <p>{{ product.description }}</p>
                         </div>
                         <div class="tab-pane fade" id="tab-pane-2">
-                            <h4 class="mb-3">Additional Information</h4>
+                            <h4 class="mb-3">{% trans 'Additional Information' %}</h4>
                             <p>{{ product.description }}</p>
                             <div class="row">
                                 {% for info in product.informations.all %}
@@ -99,7 +99,7 @@
                         <div class="tab-pane fade" id="tab-pane-3">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <h4 class="mb-4">{{ comments|length }} review for {{ product.title }}</h4>
+                                    <h4 class="mb-4">{{ comments|length }} {% trans 'review for' %} {{ product.title }}</h4>
                                     {% for comment in comments %}
                                         <div class="media mb-4">
                                             <img src="{% static 'img/user.jpg' %}" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
@@ -111,7 +111,7 @@
                                     {% endfor %}
                                 </div>
                                 <div class="col-md-6">
-                                    <h4 class="mb-4">Leave a review</h4>
+                                    <h4 class="mb-4">{% trans 'Leave a review' %}</h4>
                                     <form action="{% url 'product:comment' product.id %}" method="post">
                                         {% csrf_token %}
                                         <div class="form-group">
@@ -125,7 +125,7 @@
                                             {{ form.description.errors }}
                                         </div>
                                         <div class="form-group mb-0">
-                                            <input type="submit" value="Leave Your Review" class="btn btn-primary px-3">
+                                            <input type="submit" value="{% trans 'Leave Your Review' %}" class="btn btn-primary px-3">
                                         </div>
                                     </form>
                                 </div>
