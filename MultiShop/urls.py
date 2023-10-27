@@ -14,4 +14,5 @@ urlpatterns += i18n_patterns(
     path('product/', include('product.urls', namespace='product')),
     path('cart/', include('cart.urls', namespace='cart')),
     path('utils/', include('utils.urls', namespace='utils')),
+    path('rosetta/', include('rosetta.urls')),
 )

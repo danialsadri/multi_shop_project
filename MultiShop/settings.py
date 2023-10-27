@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'cart.apps.CartConfig',
     'utils.apps.UtilsConfig',
     'django_render_partial',
+    'rosetta',
 ]
 
 MIDDLEWARE = [
@@ -156,11 +157,15 @@ ZP_API_REQUEST = f"https://{sandbox}.zarinpal.com/pg/rest/WebGate/PaymentRequest
 ZP_API_VERIFY = f"https://{sandbox}.zarinpal.com/pg/rest/WebGate/PaymentVerification.json"
 ZP_API_STARTPAY = f"https://{sandbox}.zarinpal.com/pg/StartPay/"
 
-
 LANGUAGES = (
     ('fa', 'فارسی'),
     ('en', 'English'),
 )
+
+ROSETTA_LANGUAGES = [
+    ('FA_IR', 'فارسی'),
+    ('en_US', 'English'),
+]
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale/',
