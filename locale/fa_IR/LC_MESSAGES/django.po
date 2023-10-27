@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 09:35+0330\n"
+"POT-Creation-Date: 2023-10-27 09:37+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,6 +24,7 @@ msgstr "آدرس قبض"
 #: .\accounts\templates\accounts\address.html:43
 #: .\accounts\templates\accounts\check_otp.html:25
 #: .\accounts\templates\accounts\contactus.html:48
+#: .\accounts\templates\accounts\otp_login.html:25
 msgid "send"
 msgstr "ارسال"
 
@@ -34,6 +35,10 @@ msgstr "فرم یک بار رمز عبور را بررسی کنید"
 #: .\accounts\templates\accounts\contactus.html:10
 msgid "Contact Us"
 msgstr "با ما تماس بگیرید"
+
+#: .\accounts\templates\accounts\otp_login.html:10
+msgid "Register / Login"
+msgstr "ثبت نام / ورود"
 
 #: .\home\templates\home\home.html:40
 msgid "Quality Product"
