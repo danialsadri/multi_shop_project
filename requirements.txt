@@ -2,12 +2,15 @@ asgiref==3.7.2
 certifi==2023.7.22
 charset-normalizer==3.3.1
 Django==4.2.6
+django-modeltranslation==0.18.11
 django-render-partial==0.4
+django-rosetta==0.9.9
 ghasedakpack==0.1.13
 gunicorn==21.2.0
 idna==3.4
 packaging==23.2
 Pillow==10.1.0
+polib==1.2.0
 psycopg==3.1.12
 requests==2.31.0
 sqlparse==0.4.4

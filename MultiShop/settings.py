@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'utils.apps.UtilsConfig',
     'django_render_partial',
     'rosetta',
+    'modeltranslation',
 ]
 
 MIDDLEWARE = [
