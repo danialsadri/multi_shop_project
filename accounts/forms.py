@@ -31,7 +31,7 @@ class UserCreationForm(forms.ModelForm):
 
 class UserChangeForm(forms.ModelForm):
     password = ReadOnlyPasswordHashField(
-        help_text="you can change password using <a href=\"../password/\">this form</a>.")
+        label=_("Password"), help_text="you can change password using <a href=\"../password/\">this form</a>.")
 
     class Meta:
         model = User
@@ -66,9 +66,14 @@ class ContactUsForm(forms.ModelForm):
         model = ContactUs
         fields = "__all__"
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(100)]}),
-            'email': forms.EmailInput(attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(100)]}),
-            'phone': forms.TextInput(attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(11)]}),
-            'subject': forms.TextInput(attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(100)]}),
-            'message': forms.Textarea(attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(500)]}),
+            'name': forms.TextInput(
+                attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(100)]}),
+            'email': forms.EmailInput(
+                attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(100)]}),
+            'phone': forms.TextInput(
+                attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(11)]}),
+            'subject': forms.TextInput(
+                attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(100)]}),
+            'message': forms.Textarea(
+                attrs={'class': 'form-control', 'validators': [validators.MaxLengthValidator(500)]}),
         }
