@@ -1,24 +1,25 @@
+{% load i18n %}
 <!-- Topbar Start -->
 <div class="container-fluid">
     <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
         <div class="col-lg-4">
             <a href="{% url 'home:home' %}" class="text-decoration-none">
-                <span class="h1 text-uppercase text-primary bg-dark px-2">Multi</span>
-                <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
+                <span class="h1 text-uppercase text-primary bg-dark px-2">{% trans 'Multi' %}</span>
+                <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">{% trans 'Shop' %}</span>
             </a>
         </div>
         <div class="col-lg-4 col-6 text-left">
             <form action="{% url 'home:search' %}" method="get">
                 <div class="input-group">
-                    <input type="text" name="query" class="form-control" placeholder="Search for products">
+                    <input type="text" name="query" class="form-control" placeholder="{% trans 'Search for products' %}">
                     <div class="input-group-append">
-                        <input type="submit" class="input-group-text bg-transparent text-primary" value="Search">
+                        <input type="submit" class="input-group-text bg-transparent text-primary" value="{% trans 'Search' %}">
                     </div>
                 </div>
             </form>
         </div>
         <div class="col-lg-4 col-6 text-right">
-            <p class="m-0">Customer Service</p>
+            <p class="m-0">{% trans 'Customer Service' %}</p>
             <h5 class="m-0">+012 345 6789</h5>
         </div>
     </div>
@@ -31,7 +32,7 @@
         <div class="col-lg-3 d-none d-lg-block">
             <a class="btn d-flex align-items-center justify-content-between bg-primary w-100" data-toggle="collapse"
                href="#navbar-vertical" style="height: 65px; padding: 0 30px;">
-                <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>Categories</h6>
+                <h6 class="text-dark m-0"><i class="fa fa-bars mr-2"></i>{% trans 'Categories' %}</h6>
                 <i class="fa fa-angle-down text-dark"></i>
             </a>
             <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 bg-light"
@@ -59,40 +60,33 @@
         </div>
         <div class="col-lg-9">
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
-                <a href="" class="text-decoration-none d-block d-lg-none">
-                    <span class="h1 text-uppercase text-dark bg-light px-2">Multi</span>
-                    <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Shop</span>
-                </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
-                        <a href="{% url 'home:home' %}" class="nav-item nav-link">Home</a>
-                        <a href="{% url 'product:list' %}" class="nav-item nav-link">Products</a>
-                        <a href="{% url 'accounts:contact_us' %}" class="nav-item nav-link">ContactUs</a>
+                        <a href="{% url 'home:home' %}" class="nav-item nav-link">{% trans 'Home' %}</a>
+                        <a href="{% url 'product:list' %}" class="nav-item nav-link">{% trans 'Products' %}</a>
+                        <a href="{% url 'accounts:contact_us' %}" class="nav-item nav-link">{% trans 'ContactUs' %}</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                                Cart<i class="fa fa-angle-down mt-1"></i>
+                                {% trans 'Cart' %}<i class="fa fa-angle-down mt-1"></i>
                             </a>
                             <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                <a href="{% url 'cart:detail' %}" class="dropdown-item">CartDetail</a>
+                                <a href="{% url 'cart:detail' %}" class="dropdown-item">{% trans 'CartDetail' %}</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                                Account<i class="fa fa-angle-down mt-1"></i></a>
+                                {% trans 'Account' %}<i class="fa fa-angle-down mt-1"></i></a>
                             <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
                                 {% if request.user.is_authenticated %}
-                                    <a href="{% url 'accounts:address' %}" class="dropdown-item">Address</a>
-                                    <a href="{% url 'accounts:logout' %}" class="dropdown-item">Logout</a>
+                                    <a href="{% url 'accounts:address' %}" class="dropdown-item">{% trans 'Address' %}</a>
+                                    <a href="{% url 'accounts:logout' %}" class="dropdown-item">{% trans 'Logout' %}</a>
                                 {% else %}
-                                    <a href="{% url 'accounts:login' %}" class="dropdown-item">Register / Login</a>
+                                    <a href="{% url 'accounts:login' %}" class="dropdown-item">{% trans 'Register / Login' %}</a>
                                 {% endif %}
                             </div>
                         </div>
                         {% if request.user.is_admin %}
-                        	<a href="/admin" class="nav-item nav-link">Admin</a>
+                        	<a href="/admin" class="nav-item nav-link">{% trans 'Admin' %}</a>
                         {% endif %}
                     </div>
                     <div class="navbar-nav ml-auto py-0 d-none d-lg-block">

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 11:17+0330\n"
+"POT-Creation-Date: 2023-10-27 11:27+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,6 +38,7 @@ msgid "Contact Us"
 msgstr "با ما تماس بگیرید"
 
 #: .\accounts\templates\accounts\otp_login.html:10
+#: .\templates\partials\header.html:84
 msgid "Register / Login"
 msgstr "ثبت نام / ورود"
 
@@ -49,7 +50,7 @@ msgstr "تصویر"
 #: .\cart\templates\cart\cart_detail.html:16
 #: .\cart\templates\cart\order_detail.html:15
 #: .\home\templates\home\home.html:81 .\templates\partials\footer.html:19
-#: .\templates\partials\footer.html:28
+#: .\templates\partials\footer.html:28 .\templates\partials\header.html:66
 msgid "Products"
 msgstr "محصول"
 
@@ -131,7 +132,7 @@ msgstr "بازگشت 14 روزه"
 msgid "24/7 Support"
 msgstr "پشتیبانی 24/7"
 
-#: .\home\templates\home\home.html:68
+#: .\home\templates\home\home.html:68 .\templates\partials\header.html:35
 msgid "Categories"
 msgstr "دسته بندی ها"
 
@@ -242,8 +243,11 @@ msgstr "در تماس باشید"
 
 #: .\templates\partials\footer.html:8
 msgid ""
-"Lorem ipsum dolor sit amet, consectetur elit. Consequatur deserunt est praesentium veniam."
-msgstr "خود شرکت بسیار مهم است، توسعه دهنده آن را دنبال خواهد کرد. پیامد ترک خدمت، گذشت زمان حال است."
+"Lorem ipsum dolor sit amet, consectetur elit. Consequatur deserunt est "
+"praesentium veniam."
+msgstr ""
+"خود شرکت بسیار مهم است، توسعه دهنده آن را دنبال خواهد کرد. پیامد ترک خدمت، "
+"گذشت زمان حال است."
 
 #: .\templates\partials\footer.html:9
 msgid "123 Street, New York, USA"
@@ -254,6 +258,7 @@ msgid "Quick Shop"
 msgstr "فروشگاه سریع"
 
 #: .\templates\partials\footer.html:18 .\templates\partials\footer.html:27
+#: .\templates\partials\header.html:65
 msgid "Home"
 msgstr "خانه"
 
@@ -262,8 +267,9 @@ msgid "Shopping Cart"
 msgstr "سبد خرید"
 
 #: .\templates\partials\footer.html:21 .\templates\partials\footer.html:30
+#: .\templates\partials\header.html:67
 msgid "ContactUs"
-msgstr "با ما تماس بگیرید"
+msgstr "تماس با ما"
 
 #: .\templates\partials\footer.html:34
 msgid "Newsletter"
@@ -280,3 +286,48 @@ msgstr "ثبت نام"
 #: .\templates\partials\footer.html:41
 msgid "Follow Us"
 msgstr "ما را دنبال کنید"
+
+#: .\templates\partials\header.html:7
+msgid "Multi"
+msgstr "چند"
+
+#: .\templates\partials\header.html:8
+msgid "Shop"
+msgstr "فروشگاهی"
+
+#: .\templates\partials\header.html:14
+msgid "Search for products"
+msgstr "جستجو برای محصولات"
+
+#: .\templates\partials\header.html:16
+msgid "Search"
+msgstr "جستجو کردن"
+
+#: .\templates\partials\header.html:22
+msgid "Customer Service"
+msgstr "خدمات مشتری"
+
+#: .\templates\partials\header.html:70
+msgid "Cart"
+msgstr "سبد خرید"
+
+#: .\templates\partials\header.html:73
+msgid "CartDetail"
+msgstr "جزئیات سبد خرید"
+
+#: .\templates\partials\header.html:78
+msgid "Account"
+msgstr "حساب"
+
+#: .\templates\partials\header.html:81
+
+msgid "Address"
+msgstr "آدرس"
+
+#: .\templates\partials\header.html:82
+msgid "Logout"
+msgstr "خروج"
+
+#: .\templates\partials\header.html:89
+msgid "Admin"
+msgstr "مدیریت وبسایت"
