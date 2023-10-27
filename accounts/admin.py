@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .models import User, Otp, Address, ContactUs
 from .forms import UserCreationForm, UserChangeForm
+from django.utils.translation import gettext_lazy as _
 
 
 @admin.register(User)
@@ -18,8 +19,8 @@ class UserAdmin(BaseUserAdmin):
 
     fieldsets = [
         (None, {"fields": ["phone_number", "password"]}),
-        ("Personal info", {"fields": ["email", "full_name"]}),
-        ('Permissions',
+        (_("Personal info"), {"fields": ["email", "full_name"]}),
+        (_('Permissions'),
          {'fields': ('is_active', 'is_admin', 'is_superuser', 'last_login', 'groups', 'user_permissions')}),
     ]
     add_fieldsets = [

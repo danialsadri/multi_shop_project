@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 12:34+0330\n"
+"POT-Creation-Date: 2023-10-27 12:43+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: .\accounts\admin.py:22
+msgid "Personal info"
+msgstr "اطلاعات شخصی"
+
+#: .\accounts\admin.py:23
+msgid "Permissions"
+msgstr "دسترسی ها"
+
 #: .\accounts\apps.py:8
 msgid "Accounts"
 msgstr "لیست حساب کاربری"
 
-#: .\accounts\forms.py:10
+#: .\accounts\forms.py:10 .\accounts\forms.py:34
 msgid "Password"
 msgstr "پسورد"
 
