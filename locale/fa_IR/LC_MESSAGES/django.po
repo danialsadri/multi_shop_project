@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 09:45+0330\n"
+"POT-Creation-Date: 2023-10-27 09:55+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,32 +41,39 @@ msgid "Register / Login"
 msgstr "ثبت نام / ورود"
 
 #: .\cart\templates\cart\cart_detail.html:15
+#: .\cart\templates\cart\order_detail.html:14
 msgid "Image"
 msgstr "تصویر"
 
 #: .\cart\templates\cart\cart_detail.html:16
+#: .\cart\templates\cart\order_detail.html:15
 #: .\home\templates\home\home.html:81
 msgid "Products"
 msgstr "محصول"
 
 #: .\cart\templates\cart\cart_detail.html:17
+#: .\cart\templates\cart\order_detail.html:16
 msgid "Price"
 msgstr "قیمت"
 
 #: .\cart\templates\cart\cart_detail.html:18
+#: .\cart\templates\cart\order_detail.html:17
 msgid "Quantity"
 msgstr "تعداد"
 
 #: .\cart\templates\cart\cart_detail.html:19
+#: .\cart\templates\cart\order_detail.html:18
 msgid "Color"
 msgstr "رنگ"
 
 #: .\cart\templates\cart\cart_detail.html:20
+#: .\cart\templates\cart\order_detail.html:19
 msgid "Size"
 msgstr "سایز"
 
 #: .\cart\templates\cart\cart_detail.html:21
 #: .\cart\templates\cart\cart_detail.html:49
+#: .\cart\templates\cart\order_detail.html:48
 msgid "Total"
 msgstr "جمع"
 
@@ -81,6 +88,30 @@ msgstr "خلاصه سبد خرید"
 #: .\cart\templates\cart\cart_detail.html:52
 msgid "Proceed To Checkout"
 msgstr "مراحل پرداخت"
+
+#: .\cart\templates\cart\order_detail.html:40
+msgid "Discount Code"
+msgstr "کد تخفیف"
+
+#: .\cart\templates\cart\order_detail.html:41
+msgid "Apply Coupon"
+msgstr "درخواست کوپن"
+
+#: .\cart\templates\cart\order_detail.html:44
+msgid "Order Summary"
+msgstr "خلاصه سفارش"
+
+#: .\cart\templates\cart\order_detail.html:62
+msgid "Add another address"
+msgstr "آدرس دیگری اضافه کنید"
+
+#: .\cart\templates\cart\order_detail.html:64
+msgid "Pay"
+msgstr "پرداخت"
+
+#: .\cart\templates\cart\order_detail.html:68
+msgid "You don't have any address, Add one"
+msgstr "شما هیچ آدرسی ندارید، یک آدرس اضافه کنید"
 
 #: .\home\templates\home\home.html:40
 msgid "Quality Product"
