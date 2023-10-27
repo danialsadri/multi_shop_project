@@ -27,6 +27,7 @@ class UserAdmin(BaseUserAdmin):
     ]
 
 
+@admin.register(Otp)
 class OtpAdmin(admin.ModelAdmin):
     list_display = ['phone', 'code', 'expiration_date']
     list_filter = ['expiration_date']
