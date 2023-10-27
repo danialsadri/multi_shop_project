@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k)o8xg0kijb@i@ny!kqxh+8sdrg_8k*ws&voe1y@09vi+g&i@t'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', False)
+DEBUG = os.environ.get('DEBUG', True)
 
 ALLOWED_HOSTS = []
 
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',  # new
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -70,13 +71,23 @@ WSGI_APPLICATION = 'MultiShop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DATABASE-NAME', 'postgres'),
-        'USER': os.environ.get('DATABASE-USER', 'postgres'),
-        'PASSWORD': os.environ.get('DATABASE-PASSWORD', 'postgres'),
-        'HOST': os.environ.get('DATABASE-HOST', 'database'),
-        'PORT': os.environ.get('DATABASE-PORT', 5432),
+        'NAME': 'MultiShopAdmin',
+        'USER': 'MultiShop',
+        'PASSWORD': 'MultiShop',
+        'PORT': 5432,
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': os.environ.get('DATABASE-NAME', 'postgres'),
+#         'USER': os.environ.get('DATABASE-USER', 'postgres'),
+#         'PASSWORD': os.environ.get('DATABASE-PASSWORD', 'postgres'),
+#         'HOST': os.environ.get('DATABASE-HOST', 'database'),
+#         'PORT': os.environ.get('DATABASE-PORT', 5432),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -104,6 +115,8 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
+
+USE_L10N = True
 
 USE_TZ = True
 
@@ -142,3 +155,13 @@ else:
 ZP_API_REQUEST = f"https://{sandbox}.zarinpal.com/pg/rest/WebGate/PaymentRequest.json"
 ZP_API_VERIFY = f"https://{sandbox}.zarinpal.com/pg/rest/WebGate/PaymentVerification.json"
 ZP_API_STARTPAY = f"https://{sandbox}.zarinpal.com/pg/StartPay/"
+
+
+LANGUAGES = (
+    ('fa', 'فارسی'),
+    ('en', 'English'),
+)
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale/',
+]

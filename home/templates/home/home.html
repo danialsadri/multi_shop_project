@@ -1,6 +1,7 @@
 {% extends 'parent/base.html' %}
 {% load static %}
 {% load tag %}
+{% load i18n %}
 {% block title %}MultiShop{% endblock %}
 
 {% block content %}
@@ -36,25 +37,25 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
                     <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
+                    <h5 class="font-weight-semi-bold m-0">{% trans 'Quality Product' %}</h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
                     <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
+                    <h5 class="font-weight-semi-bold m-0">{% trans 'Free Shipping' %}</h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
                     <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
+                    <h5 class="font-weight-semi-bold m-0">{% trans '14-Day Return' %}</h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="d-flex align-items-center bg-light mb-4" style="padding: 30px;">
                     <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
+                    <h5 class="font-weight-semi-bold m-0">{% trans '24/7 Support' %}</h5>
                 </div>
             </div>
         </div>
@@ -64,7 +65,7 @@
     <!-- Categories Start -->
     <div class="container-fluid pt-5">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
-            <span class="bg-secondary pr-3">Categories</span>
+            <span class="bg-secondary pr-3">{% trans 'Categories' %}</span>
         </h2>
         <div class="row px-xl-5 pb-3">
             {% for category in categories %}
@@ -77,7 +78,7 @@
                                 </div>
                                 <div class="flex-fill pl-3">
                                     <h6>{{ category.title }}</h6>
-                                    <small class="text-body">{{ category.products.count }} Products</small>
+                                    <small class="text-body">{{ category.products.count }} {% trans 'Products' %}</small>
                                 </div>
                             </div>
                         </a>
@@ -90,7 +91,7 @@
 
     <!-- Products Start -->
     <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Recent Products</span>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">{% trans 'Recent Products' %}</span>
         </h2>
         <div class="row px-xl-5">
             {% resent_products 8 %}
@@ -100,7 +101,7 @@
 
     <!-- Products Start -->
     <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Popular products</span></h2>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">{% trans 'Popular products' %}</span></h2>
         <div class="row px-xl-5">
             {% popular_products 8 as products %}
             {% for product in products %}
