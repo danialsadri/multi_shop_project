@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 11:57+0330\n"
+"POT-Creation-Date: 2023-10-27 12:02+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,9 +21,22 @@ msgstr ""
 msgid "Accounts"
 msgstr "لیست حساب کاربری"
 
-#: .\accounts\models.py:8 .\accounts\models.py:33 .\accounts\models.py:49
+#: .\accounts\forms.py:10
+msgid "Password"
+msgstr "پسورد"
+
+#: .\accounts\forms.py:11
+msgid "Password confirmation"
+msgstr "تکرار پسورد"
+
+#: .\accounts\forms.py:43 .\accounts\models.py:8 .\accounts\models.py:33
+#: .\accounts\models.py:49
 msgid "phone_number"
 msgstr "شماره تلفن"
+
+#: .\accounts\forms.py:48 .\accounts\models.py:34
+msgid "code"
+msgstr "کد"
 
 #: .\accounts\models.py:9 .\accounts\models.py:48
 msgid "email"
@@ -52,10 +65,6 @@ msgstr ""
 #: .\accounts\models.py:32
 msgid "token"
 msgstr "توکن"
-
-#: .\accounts\models.py:34
-msgid "code"
-msgstr "کد"
 
 #: .\accounts\models.py:35
 msgid "expiration_date"

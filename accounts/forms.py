@@ -3,11 +3,12 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core import validators
 from django.core.exceptions import ValidationError
 from .models import User, Address, ContactUs
+from django.utils.text import gettext_lazy as _
 
 
 class UserCreationForm(forms.ModelForm):
-    password1 = forms.CharField(label="Password", widget=forms.PasswordInput)
-    password2 = forms.CharField(label="Password confirmation", widget=forms.PasswordInput)
+    password1 = forms.CharField(label=_("Password"), widget=forms.PasswordInput)
+    password2 = forms.CharField(label=_("Password confirmation"), widget=forms.PasswordInput)
 
     class Meta:
         model = User
@@ -39,12 +40,12 @@ class UserChangeForm(forms.ModelForm):
 
 class OtpLoginForm(forms.Form):
     phone = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}),
-                            validators=[validators.MaxLengthValidator(11)])
+                            validators=[validators.MaxLengthValidator(11)], label=_("phone_number"))
 
 
 class CheckOtpForm(forms.Form):
     code = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}),
-                           validators=[validators.MaxLengthValidator(4)])
+                           validators=[validators.MaxLengthValidator(4)], label=_("code"))
 
 
 class AddressForm(forms.ModelForm):
