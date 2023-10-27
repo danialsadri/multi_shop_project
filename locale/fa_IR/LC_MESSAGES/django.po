@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 12:02+0330\n"
+"POT-Creation-Date: 2023-10-27 12:16+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,13 +54,13 @@ msgstr "فعال بودن"
 msgid "is_admin"
 msgstr "ادمین بودن"
 
-#: .\accounts\models.py:20
-msgid "کاربر"
-msgstr ""
+#: .\accounts\models.py:20 .\accounts\models.py:46 .\cart\models.py:8
+msgid "user"
+msgstr "کاربر"
 
 #: .\accounts\models.py:21
-msgid "کاربر ها"
-msgstr ""
+msgid "users"
+msgstr "کاربر ها"
 
 #: .\accounts\models.py:32
 msgid "token"
@@ -78,11 +78,7 @@ msgstr "رمز یکبار مصرف"
 msgid "otps"
 msgstr "لیست رمز یکبار مصرف"
 
-#: .\accounts\models.py:46
-msgid "user"
-msgstr "کاربر"
-
-#: .\accounts\models.py:50
+#: .\accounts\models.py:50 .\cart\models.py:10
 msgid "address"
 msgstr "آدرس"
 
@@ -118,7 +114,7 @@ msgstr "موضوع"
 msgid "message"
 msgstr "پیام"
 
-#: .\accounts\models.py:67
+#: .\accounts\models.py:67 .\cart\models.py:12
 msgid "created"
 msgstr "زمان ایجاد"
 
@@ -150,6 +146,70 @@ msgstr "با ما تماس بگیرید"
 #: .\templates\partials\header.html:84
 msgid "Register / Login"
 msgstr "ثبت نام / ورود"
+
+#: .\cart\apps.py:8
+msgid "shopping cart list"
+msgstr "لیست سبد خرید"
+
+#: .\cart\models.py:9
+msgid "total_price"
+msgstr "قیمت کل"
+
+#: .\cart\models.py:11
+msgid "is_paid"
+msgstr "پرداخت شده"
+
+#: .\cart\models.py:15
+msgid "Order"
+msgstr "سفارش"
+
+#: .\cart\models.py:16
+msgid "Orders"
+msgstr "سفارشات"
+
+#: .\cart\models.py:23
+msgid "order"
+msgstr "سفارش"
+
+#: .\cart\models.py:24
+msgid "product"
+msgstr "محصول"
+
+#: .\cart\models.py:25
+msgid "size"
+msgstr "اندازه"
+
+#: .\cart\models.py:26
+msgid "color"
+msgstr "رنگ"
+
+#: .\cart\models.py:27 .\cart\models.py:41
+msgid "quantity"
+msgstr "تعداد"
+
+#: .\cart\models.py:28
+msgid "price"
+msgstr "قیمت"
+
+#: .\cart\models.py:31 .\cart\models.py:32
+msgid "OrderItems"
+msgstr "موارد سفارش"
+
+#: .\cart\models.py:39
+msgid "name"
+msgstr "نام"
+
+#: .\cart\models.py:40
+msgid "discount"
+msgstr "تخفیف"
+
+#: .\cart\models.py:44
+msgid "DiscountCode"
+msgstr "کد تخفیف"
+
+#: .\cart\models.py:45
+msgid "DiscountCodes"
+msgstr "کدهای تخفیف"
 
 #: .\cart\templates\cart\cart_detail.html:15
 #: .\cart\templates\cart\order_detail.html:14
