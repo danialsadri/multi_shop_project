@@ -85,6 +85,13 @@
                                 {% endif %}
                             </div>
                         </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> {% trans 'languages' %}<i class="fa fa-angle-down mt-1"></i></a>
+                            <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
+                                <a href="\en" class="dropdown-item">{% trans 'English' %}</a>
+                                <a href="\fa" class="dropdown-item">{% trans 'Persian' %}</a>
+                            </div>
+                        </div>
                         {% if request.user.is_admin %}
                         	<a href="/admin" class="nav-item nav-link">{% trans 'Admin' %}</a>
                         {% endif %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 12:49+0330\n"
+"POT-Creation-Date: 2023-10-27 14:35+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -576,5 +576,17 @@ msgid "Logout"
 msgstr "خروج"
 
 #: .\templates\partials\header.html:89
+msgid "languages"
+msgstr "زبان ها"
+
+#: .\templates\partials\header.html:91
+msgid "English"
+msgstr "انگلیسی"
+
+#: .\templates\partials\header.html:92
+msgid "Persian"
+msgstr "فارسی"
+
+#: .\templates\partials\header.html:96
 msgid "Admin"
 msgstr "مدیریت وبسایت"
