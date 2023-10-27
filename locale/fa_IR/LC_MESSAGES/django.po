@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 12:16+0330\n"
+"POT-Creation-Date: 2023-10-27 12:34+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -114,7 +114,8 @@ msgstr "موضوع"
 msgid "message"
 msgstr "پیام"
 
-#: .\accounts\models.py:67 .\cart\models.py:12
+#: .\accounts\models.py:67 .\cart\models.py:12 .\product\models.py:57
+#: .\product\models.py:90
 msgid "created"
 msgstr "زمان ایجاد"
 
@@ -171,15 +172,16 @@ msgstr "سفارشات"
 msgid "order"
 msgstr "سفارش"
 
-#: .\cart\models.py:24
+#: .\cart\models.py:24 .\product\models.py:60 .\product\models.py:74
+#: .\product\models.py:86
 msgid "product"
 msgstr "محصول"
 
-#: .\cart\models.py:25
+#: .\cart\models.py:25 .\product\models.py:26 .\product\models.py:55
 msgid "size"
 msgstr "اندازه"
 
-#: .\cart\models.py:26
+#: .\cart\models.py:26 .\product\models.py:37 .\product\models.py:56
 msgid "color"
 msgstr "رنگ"
 
@@ -187,7 +189,7 @@ msgstr "رنگ"
 msgid "quantity"
 msgstr "تعداد"
 
-#: .\cart\models.py:28
+#: .\cart\models.py:28 .\product\models.py:53
 msgid "price"
 msgstr "قیمت"
 
@@ -195,11 +197,11 @@ msgstr "قیمت"
 msgid "OrderItems"
 msgstr "موارد سفارش"
 
-#: .\cart\models.py:39
+#: .\cart\models.py:39 .\product\models.py:87
 msgid "name"
 msgstr "نام"
 
-#: .\cart\models.py:40
+#: .\cart\models.py:40 .\product\models.py:54
 msgid "discount"
 msgstr "تخفیف"
 
@@ -312,6 +314,75 @@ msgstr "محصولات اخیر"
 #: .\home\templates\home\home.html:104
 msgid "Popular products"
 msgstr "محصولات محبوب"
+
+#: .\product\apps.py:8
+msgid "product list"
+msgstr " لیست محصول ها"
+
+#: .\product\models.py:10
+msgid "parent"
+msgstr "والد"
+
+#: .\product\models.py:11 .\product\models.py:23 .\product\models.py:34
+#: .\product\models.py:50
+msgid "title"
+msgstr "عنوان"
+
+#: .\product\models.py:12
+msgid "slug"
+msgstr "اسلاگ"
+
+#: .\product\models.py:15 .\product\models.py:49
+msgid "category"
+msgstr "دسته بندی"
+
+#: .\product\models.py:16
+msgid "categories"
+msgstr "دسته بندی ها"
+
+#: .\product\models.py:27
+msgid "sizes"
+msgstr "اندازه ها"
+
+#: .\product\models.py:38
+msgid "colors"
+msgstr "رنگ ها"
+
+#: .\product\models.py:51 .\product\models.py:88
+msgid "description"
+msgstr "توضیحات"
+
+#: .\product\models.py:52
+msgid "image"
+msgstr "تصویر"
+
+#: .\product\models.py:61
+msgid "products"
+msgstr "محصول ها"
+
+#: .\product\models.py:75
+msgid "text"
+msgstr "متن"
+
+#: .\product\models.py:78
+msgid "information"
+msgstr "اطلاعات"
+
+#: .\product\models.py:79
+msgid "informations"
+msgstr "اطلاعات ها"
+
+#: .\product\models.py:89
+msgid "active"
+msgstr "فعال بودن"
+
+#: .\product\models.py:95
+msgid "comment"
+msgstr "کامنت"
+
+#: .\product\models.py:96
+msgid "comments"
+msgstr "کامنت ها"
 
 #: .\product\templates\product\comment.html:9
 msgid "Your comment has been registered"
