@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 09:37+0330\n"
+"POT-Creation-Date: 2023-10-27 09:45+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,6 +40,48 @@ msgstr "با ما تماس بگیرید"
 msgid "Register / Login"
 msgstr "ثبت نام / ورود"
 
+#: .\cart\templates\cart\cart_detail.html:15
+msgid "Image"
+msgstr "تصویر"
+
+#: .\cart\templates\cart\cart_detail.html:16
+#: .\home\templates\home\home.html:81
+msgid "Products"
+msgstr "محصول"
+
+#: .\cart\templates\cart\cart_detail.html:17
+msgid "Price"
+msgstr "قیمت"
+
+#: .\cart\templates\cart\cart_detail.html:18
+msgid "Quantity"
+msgstr "تعداد"
+
+#: .\cart\templates\cart\cart_detail.html:19
+msgid "Color"
+msgstr "رنگ"
+
+#: .\cart\templates\cart\cart_detail.html:20
+msgid "Size"
+msgstr "سایز"
+
+#: .\cart\templates\cart\cart_detail.html:21
+#: .\cart\templates\cart\cart_detail.html:49
+msgid "Total"
+msgstr "جمع"
+
+#: .\cart\templates\cart\cart_detail.html:22
+msgid "Remove"
+msgstr "حذف"
+
+#: .\cart\templates\cart\cart_detail.html:44
+msgid "Cart Summary"
+msgstr "خلاصه سبد خرید"
+
+#: .\cart\templates\cart\cart_detail.html:52
+msgid "Proceed To Checkout"
+msgstr "مراحل پرداخت"
+
 #: .\home\templates\home\home.html:40
 msgid "Quality Product"
 msgstr "محصول باکیفیت"
@@ -59,10 +101,6 @@ msgstr "پشتیبانی 24/7"
 #: .\home\templates\home\home.html:68
 msgid "Categories"
 msgstr "دسته بندی ها"
-
-#: .\home\templates\home\home.html:81
-msgid "Products"
-msgstr "محصول"
 
 #: .\home\templates\home\home.html:94
 msgid "Recent Products"
