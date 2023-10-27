@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 10:19+0330\n"
+"POT-Creation-Date: 2023-10-27 11:17+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,7 +48,8 @@ msgstr "تصویر"
 
 #: .\cart\templates\cart\cart_detail.html:16
 #: .\cart\templates\cart\order_detail.html:15
-#: .\home\templates\home\home.html:81
+#: .\home\templates\home\home.html:81 .\templates\partials\footer.html:19
+#: .\templates\partials\footer.html:28
 msgid "Products"
 msgstr "محصول"
 
@@ -234,3 +235,48 @@ msgstr "سبز"
 #: .\product\templates\product\product_list.html:57
 msgid "Filter by size"
 msgstr "فیلتر بر اساس سایز"
+
+#: .\templates\partials\footer.html:7
+msgid "Get In Touch"
+msgstr "در تماس باشید"
+
+#: .\templates\partials\footer.html:8
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur elit. Consequatur deserunt est praesentium veniam."
+msgstr "خود شرکت بسیار مهم است، توسعه دهنده آن را دنبال خواهد کرد. پیامد ترک خدمت، گذشت زمان حال است."
+
+#: .\templates\partials\footer.html:9
+msgid "123 Street, New York, USA"
+msgstr "خیابان 123، نیویورک، ایالات متحده آمریکا"
+
+#: .\templates\partials\footer.html:16 .\templates\partials\footer.html:25
+msgid "Quick Shop"
+msgstr "فروشگاه سریع"
+
+#: .\templates\partials\footer.html:18 .\templates\partials\footer.html:27
+msgid "Home"
+msgstr "خانه"
+
+#: .\templates\partials\footer.html:20 .\templates\partials\footer.html:29
+msgid "Shopping Cart"
+msgstr "سبد خرید"
+
+#: .\templates\partials\footer.html:21 .\templates\partials\footer.html:30
+msgid "ContactUs"
+msgstr "با ما تماس بگیرید"
+
+#: .\templates\partials\footer.html:34
+msgid "Newsletter"
+msgstr "خبرنامه"
+
+#: .\templates\partials\footer.html:37
+msgid "Your Email Address"
+msgstr "آدرس ایمیل شما"
+
+#: .\templates\partials\footer.html:38
+msgid "Sign Up"
+msgstr "ثبت نام"
+
+#: .\templates\partials\footer.html:41
+msgid "Follow Us"
+msgstr "ما را دنبال کنید"
